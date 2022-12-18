@@ -32,6 +32,10 @@ public abstract class Piece extends JComponent {
 
     public abstract JLabel visible(int i, int j);
 
+    public void capture(int i,int j){
+
+    }
+
 
 }
 

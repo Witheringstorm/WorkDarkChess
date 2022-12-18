@@ -36,7 +36,7 @@ public class ChessGameFrame extends JFrame {
 
         addRestartButton();
         DrawPieces();
-        addPlayerTurn();
+       // add(PlayerTurnLabel());
 
     }
 
@@ -82,7 +82,6 @@ public class ChessGameFrame extends JFrame {
                         // 这里是点击 JLabel 后要执行的代码
                         System.out.println("Click!" + (finalI + 1) + "," + (finalJ + 1));
                         ClickPieces.click(chessboard[finalI][finalJ], finalI, finalJ);
-
                     }
                 });
                 add(label);
@@ -90,15 +89,14 @@ public class ChessGameFrame extends JFrame {
         }
     }
 
-    public void addPlayerTurn(){
-        JLabel label = new JLabel(String.format("%c",Player.playerTurn));
+    public static JLabel PlayerTurnLabel(){
+        JLabel label = new JLabel(String.format("%c",Player.whichPlayer()));
+        label.setText(String.format("%c",Player.whichPlayer()));
         label.setSize(100,50);
         label.setFont(new Font("Rockwell", Font.BOLD, 50));
-        label.setLocation(700,300);
-        add(label);
+        label.setLocation(500,500);
+        return label;
     }
-
-
 }
 
 
