@@ -6,9 +6,9 @@ import javax.swing.*;
 
 public class MinisterChess extends Piece {
 
-    ImageIcon r = new ImageIcon("image/r_minister.png");
+    public static ImageIcon r = new ImageIcon("image/r_minister.png");
     ImageIcon rs = new ImageIcon("image/r_minister_s.png");
-    ImageIcon b = new ImageIcon("image/b_minister.png");
+    public static ImageIcon b = new ImageIcon("image/b_minister.png");
     ImageIcon bs = new ImageIcon("image/b_minister_s.png");
 
 
@@ -18,9 +18,12 @@ public class MinisterChess extends Piece {
         this.side = side;
     }
 
-    public JLabel visible(int i, int j) {
+    public JLabel visible() {
         System.out.println("visible!!!");
-        if (this.IsReversal == false) {
+        if(this.alive == false){
+            PieceLabel.setIcon(dead);
+        }
+        else if (this.IsReversal == false) {
             PieceLabel.setIcon(unreversed);
         } else {
             if (this.side == 'r' && IsSelected == false)
@@ -38,7 +41,7 @@ public class MinisterChess extends Piece {
         }
 
         PieceLabel.setSize(75, 75);
-        PieceLabel.setLocation(Coordinate.reverse_calculateX(j + 1) - 10, Coordinate.reverse_calculateY(i + 1) - 17);
+        PieceLabel.setLocation(Coordinate.reverse_calculateX(x + 1) - 10, Coordinate.reverse_calculateY(y + 1) - 17);
         return PieceLabel;
     }
 }

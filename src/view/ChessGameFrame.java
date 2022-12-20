@@ -5,6 +5,7 @@ package view;
 
 import Calculate.*;
 import EventDealer.ClickPieces;
+import EventDealer.Interact;
 import EventDealer.Player;
 import Pieces.*;
 
@@ -15,17 +16,18 @@ import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 
 import static Pieces.Information_of_Location.chessboard;
+import static Pieces.Information_of_Location.initialize;
 
 public class ChessGameFrame extends JFrame {
-    private int GameFrameWidth = 720;
+    private final int GameFrameWidth = 720;
 
-    private int GameFrameHeight = 720;
+    private final int GameFrameHeight = 720;
 
     public int Click_x;
     public int Click_y;
 
+    public JLabel PlayerTurnLabel = new JLabel();
     public ChessGameFrame() {
-
         setTitle("Dark Chess");
         setSize(GameFrameWidth, GameFrameHeight);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -36,8 +38,8 @@ public class ChessGameFrame extends JFrame {
 
         addRestartButton();
         DrawPieces();
-       // add(PlayerTurnLabel());
-
+        getPlayerTurnLabel();
+        DeadPiecesVisible();
     }
 
 
@@ -62,11 +64,22 @@ public class ChessGameFrame extends JFrame {
         restart.setSize(100, 50);
         restart.setVisible(true);
         restart.addActionListener(e -> {
-            // TODO: 2022/12/17  
+            Information_of_Location.restart();
             System.out.println("Restart");
-
+            for (int i = 0; i < 8; i++) {
+                for (int j = 0; j < 4; j++) {
+                    chessboard[i][j].x = j;
+                    chessboard[i][j].y = i;
+                    chessboard[i][j].IsSelected = false;
+                    chessboard[i][j].IsReversal = false;
+                    chessboard[i][j].alive = true;
+                    chessboard[i][j].visible();
+                }
+            }
+            Player.click_times = 0;
+            ClickPieces.theVeryFirstClick = true;
+            ClickPieces.PlayerTurnLabelHide = false;
         });
-
         add(restart);
     }
 
@@ -74,29 +87,50 @@ public class ChessGameFrame extends JFrame {
     public void DrawPieces() {
         for (int i = 0; i < 8; i++) {
             for (int j = 0; j < 4; j++) {
-                JLabel label = chessboard[i][j].visible(i, j);
-                int finalI = i;
-                int finalJ = j;
+                chessboard[i][j].x = j;
+                chessboard[i][j].y = i;
+                JLabel label = chessboard[i][j].visible();
+                Piece ClickedPiece = chessboard[i][j];
                 label.addMouseListener(new MouseAdapter() {
                     public void mousePressed(MouseEvent e) {
                         // 这里是点击 JLabel 后要执行的代码
-                        System.out.println("Click!" + (finalI + 1) + "," + (finalJ + 1));
-                        ClickPieces.click(chessboard[finalI][finalJ], finalI, finalJ);
+                        System.out.println("Click!");
+                        ClickPieces.click(ClickedPiece);
+                        getPlayerTurnLabel();
                     }
                 });
                 add(label);
             }
         }
     }
-
-    public static JLabel PlayerTurnLabel(){
-        JLabel label = new JLabel(String.format("%c",Player.whichPlayer()));
-        label.setText(String.format("%c",Player.whichPlayer()));
-        label.setSize(100,50);
-        label.setFont(new Font("Rockwell", Font.BOLD, 50));
-        label.setLocation(500,500);
-        return label;
+    //轮到哪方，添加标语。
+    public void getPlayerTurnLabel() {
+        if(ClickPieces.PlayerTurnLabelHide){
+            PlayerTurnLabel.setText("");
+        }
+        else if (Player.whichPlayer() == 'r') {
+            PlayerTurnLabel.setText("Red's Turn");
+        } else {
+            PlayerTurnLabel.setText("Black's Turn");
+        }
+        PlayerTurnLabel.setSize(200, 50);
+        PlayerTurnLabel.setFont(new Font("Rockwell", Font.BOLD, 30));
+        PlayerTurnLabel.setLocation(450, 500);
+        add(PlayerTurnLabel);
     }
+
+    //在棋盘外显示死亡的棋子
+    public static void DeadPiecesVisible(){
+        int y = 0;
+        int count = 0;
+        for(Piece i : Interact.DeadPieces){
+            if (i.side == 'r') {
+
+            }
+        }
+    }
+
+
 }
 
 

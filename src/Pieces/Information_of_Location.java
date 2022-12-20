@@ -6,13 +6,15 @@ public class Information_of_Location {
     /*
     用二维数组存储棋子类型和位置信息
      */
-    public static Piece[][] chessboard = new Piece[8][4];
-    public ArrayList<Piece> arr = new ArrayList<>();
+    public static Piece[][] chessboard ;
+    public static ArrayList<Piece> arr;
 
 
-    public void initialize() {
+    public static void initialize() {
         //初始化棋盘
         //填充指定数量的对应棋子
+        chessboard =new Piece[8][4];
+        arr = new ArrayList<>();
         arr.add(new GeneralChess('r'));
         arr.add(new GeneralChess('b'));
         for (int i = 0; i < 2; i++) {
@@ -49,5 +51,17 @@ public class Information_of_Location {
             }
         }
 
+    }
+
+    public static void restart() {
+        for (int i = 7; i > 0; i--) {
+            for (int j = 3; j > 0; j--) {
+                int x = (int) (Math.random() * (i + 1));
+                int y = (int) (Math.random() * (j + 1));
+                Piece tmp = chessboard[i][j];
+                chessboard[i][j] = chessboard[x][y];
+                chessboard[x][y] = tmp;
+            }
+        }
     }
 }

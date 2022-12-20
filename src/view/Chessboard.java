@@ -1,6 +1,9 @@
 package view;
 
 
+import EventDealer.Interact;
+import Pieces.Piece;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -23,7 +26,6 @@ public class Chessboard extends JPanel {
         try {
             Wooden_Chessboard = ImageIO.read(new File("image/WoodenChessboard.jpg"));
             test = ImageIO.read(new File("image/test.jpg"));
-            advisor = ImageIO.read(new File("image/advisor.png"));
         } catch (IOException e) {
             e.printStackTrace();
 
@@ -33,7 +35,6 @@ public class Chessboard extends JPanel {
     @Override
     public void paintComponent(Graphics g) {
         //绘制背景和格子
-        JPanel panel2 = new JPanel();
         Graphics2D g2 = (Graphics2D) g;
         g2.drawImage(Wooden_Chessboard, 0, 0, this);
         g2.setColor(Color.WHITE);
