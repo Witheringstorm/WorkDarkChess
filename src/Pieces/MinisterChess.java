@@ -6,9 +6,8 @@ import javax.swing.*;
 
 public class MinisterChess extends Piece {
 
-    public static ImageIcon r = new ImageIcon("image/r_minister.png");
+
     ImageIcon rs = new ImageIcon("image/r_minister_s.png");
-    public static ImageIcon b = new ImageIcon("image/b_minister.png");
     ImageIcon bs = new ImageIcon("image/b_minister_s.png");
 
 
@@ -16,6 +15,8 @@ public class MinisterChess extends Piece {
         type = 4;
         points = 5;
         this.side = side;
+        r = new ImageIcon("image/r_minister.png");
+        b = new ImageIcon("image/b_minister.png");
     }
 
     public JLabel visible() {

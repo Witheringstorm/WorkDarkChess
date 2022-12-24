@@ -6,14 +6,16 @@ import javax.swing.*;
 
 public class SoldierChess extends Piece{
 
-    public static ImageIcon r = new ImageIcon("image/r_soldier.png");
+
     ImageIcon rs = new ImageIcon("image/r_soldier_s.png");
-    public static ImageIcon b = new ImageIcon("image/b_soldier.png");
+
     ImageIcon bs= new ImageIcon("image/b_soldier_s.png");
     public SoldierChess(char side) {
         type = 1;
         points = 1;
         this.side = side;
+        r = new ImageIcon("image/r_soldier.png");
+        b = new ImageIcon("image/b_soldier.png");
     }
 
     public JLabel visible() {

@@ -6,14 +6,15 @@ import javax.swing.*;
 
 public class ChariotChess extends Piece{
 
-    public static ImageIcon r = new ImageIcon("image/r_chariot.png");
     ImageIcon rs = new ImageIcon("image/r_chariot_s.png");
-    public static ImageIcon b = new ImageIcon("image/b_chariot.png");
+
     ImageIcon bs = new ImageIcon("image/b_chariot_s.png");
     public ChariotChess(char side) {
         type = 3;
         points = 5;
         this.side = side;
+        r = new ImageIcon("image/r_chariot.png");
+        b = new ImageIcon("image/b_chariot.png");
     }
 
     public JLabel visible() {

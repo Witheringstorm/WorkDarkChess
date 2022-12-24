@@ -1,8 +1,9 @@
 package Pieces;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class Information_of_Location {
+public class Information_of_Location implements Serializable {
     /*
     用二维数组存储棋子类型和位置信息
      */
@@ -64,4 +65,6 @@ public class Information_of_Location {
             }
         }
     }
+
+
 }

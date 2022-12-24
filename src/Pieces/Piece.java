@@ -14,11 +14,11 @@ public abstract class Piece extends JComponent {
     public char side;
     public boolean alive = true;
     public int points;
-    ImageIcon unreversed = new ImageIcon("image/unreversed.png");
-    ImageIcon dead = new ImageIcon("image/dead.png");
-    public static ImageIcon b;
-    public static ImageIcon r;
+    public static ImageIcon unreversed = new ImageIcon("image/unreversed.png");
+    public static ImageIcon dead = new ImageIcon("image/dead.png");
 
+    public ImageIcon r;
+    public ImageIcon b;
 
 
 
@@ -36,6 +36,11 @@ public abstract class Piece extends JComponent {
     }
 
     public abstract JLabel visible();
+
+    public String toString(){
+        return(String.format("%d %c %b %d %d %b",type,side,alive,x,y,IsReversal));
+    }
+
 
     public void capture(int i,int j){
 

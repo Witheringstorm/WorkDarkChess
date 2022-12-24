@@ -9,15 +9,18 @@ public class AdvisorChess extends Piece {
     //棋子：仕
 
 
-    public static ImageIcon b = new ImageIcon("image/b_advisor.png");
+
     ImageIcon bs = new ImageIcon("image/b_advisor_s.png");
 
-    public static ImageIcon r = new ImageIcon("image/r_advisor.png");
+
     public static ImageIcon rs = new ImageIcon("image/r_advisor_s.png");
-    public AdvisorChess(char side) {
+    public AdvisorChess(char side){
         type = 5;
         points = 10;
         this.side = side;
+        r = new ImageIcon("image/r_advisor.png");
+        b = new ImageIcon("image/b_advisor.png");
+
     }
 
     public JLabel visible() {
@@ -46,6 +49,7 @@ public class AdvisorChess extends Piece {
         PieceLabel.setLocation(Coordinate.reverse_calculateX(x + 1) -10, Coordinate.reverse_calculateY(y+ 1) - 17);
         return PieceLabel;
     }
+
 
 }
 

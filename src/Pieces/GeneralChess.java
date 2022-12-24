@@ -9,8 +9,8 @@ public class GeneralChess extends Piece {
         //棋子： 将
 
 
-    public static ImageIcon r = new ImageIcon("image/r_general.png");
-    public static ImageIcon b = new ImageIcon("image/b_general.png");
+
+
     ImageIcon rs = new ImageIcon("image/r_general_s.png");
     ImageIcon bs = new ImageIcon("image/b_general_s.png");
 
@@ -19,6 +19,8 @@ public class GeneralChess extends Piece {
         type = 6;
         points = 30;
         this.side = side;
+        r = new ImageIcon("image/r_general.png");
+        b = new ImageIcon("image/b_general.png");
     }
 
     public JLabel visible() {
