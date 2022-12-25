@@ -11,6 +11,8 @@ import SaveAndLoad.Save;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
@@ -69,6 +71,7 @@ public class ChessGameFrame extends JFrame {
 
         addSaveButton();
         addLoadButton();
+        addCheatingButton();
     }
 
 
@@ -162,9 +165,10 @@ public class ChessGameFrame extends JFrame {
     //轮到哪方，添加标语。
     public void getPlayerTurnLabel() {
         if (ClickPieces.PlayerTurnLabelHide) {
-            PlayerTurnLabel.setText("");
+            PlayerTurnLabel.setText("In Progress");
         } else if (Player.whichPlayer() == 'r') {
             PlayerTurnLabel.setText("Red's Turn");
+
         } else {
             PlayerTurnLabel.setText("Black's Turn");
         }
@@ -237,6 +241,19 @@ public class ChessGameFrame extends JFrame {
         }
         add(WinnerLabel);
     }
+
+    //作弊模式
+    public void addCheatingButton(){
+        JButton cheat = new JButton("Cheating Mode");
+        cheat.setLocation(500, 400);
+        cheat.setSize(100, 50);
+        cheat.setVisible(true);
+
+        add(cheat);//todo
+    }
+
+
+
     //存档按钮
     public void addSaveButton() {
         AtomicBoolean canSave = new AtomicBoolean(true);
