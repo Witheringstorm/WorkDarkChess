@@ -24,11 +24,11 @@ public class Points {
             }
         }
 
-        if(PointsOfRed >= 80) {
+        if(PointsOfRed >= 60) {
             GameOver = true;
             Winner = "Red";
         }
-        if(PointsOfBlack >= 80){
+        if(PointsOfBlack >= 60){
             GameOver = true;
             Winner = "Black";
         }
