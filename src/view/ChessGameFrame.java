@@ -49,6 +49,7 @@ public class ChessGameFrame extends JFrame {
     public boolean canSave = true;
     public boolean canSave2 = false;
     public static int clickTimes = 0;
+    public boolean cheat = false;
 
     public ChessGameFrame() {
         setTitle("Dark Chess");
@@ -175,6 +176,18 @@ public class ChessGameFrame extends JFrame {
 
 
                     }
+
+                    public void mouseEntered(MouseEvent e) {
+                        if (cheat && ClickedPiece.alive) {
+                            ClickedPiece.visible(true);
+                        }
+                    }
+
+                    public void mouseExited(MouseEvent e) {
+                        if (cheat) {
+                            ClickedPiece.visible();
+                        }
+                    }
                 });
                 add(label);
             }
@@ -284,7 +297,7 @@ public class ChessGameFrame extends JFrame {
                 }
             } else {
                 JOptionPane.showMessageDialog(null, "游戏未开始或已存档\n (悔棋后至少下一步棋后才能存档)"
-                        ,"非法操作",JOptionPane.WARNING_MESSAGE);
+                        , "非法操作", JOptionPane.WARNING_MESSAGE);
             }
         });
         add(save);
@@ -366,23 +379,17 @@ public class ChessGameFrame extends JFrame {
         Cheat.addActionListener(e -> {
             c.getAndIncrement();
             if (c.get() % 2 == 1) {
-                for (int x = 0; x < 8; x++) {
-                    for (int y = 0; y < 4; y++) {
-                        if (chessboard[x][y].alive) {
-                            chessboard[x][y].visible(true);
-                        }
-                    }
-                }
+                cheat = true;
                 Cheat.setText("Cheat Mode: ON");
             } else {
-                for (int x = 0; x < 8; x++) {
-                    for (int y = 0; y < 4; y++) {
-                        chessboard[x][y].visible();
+                cheat = false;
+                for (int i = 0; i < 8; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        chessboard[i][j].visible();
                     }
                 }
                 Cheat.setText("Cheat Mode: OFF");
             }
-
         });
         add(Cheat);
     }
@@ -395,29 +402,31 @@ public class ChessGameFrame extends JFrame {
         undo.setVisible(true);
         AtomicInteger a = new AtomicInteger(1);
         undo.addActionListener(e -> {
-            if(clickTimes >= 2){
-            try {
-                Undo.undo(a.getAndIncrement());
-                dispose();
-            } catch (IndexOutOfBoundsException q) {
-                a.getAndDecrement();
+            if (clickTimes >= 2) {
+                try {
+                    Undo.undo(a.getAndIncrement());
+                    dispose();
+                } catch (IndexOutOfBoundsException q) {
+                    a.getAndDecrement();
+                    JOptionPane.showMessageDialog(null, "无法进一步回退",
+                            "非法操作", JOptionPane.ERROR_MESSAGE);
+                }
+                getPlayerTurnLabel();
+                DeadPiece = null;
+                DeadPieces = new ArrayList<>();
+                for (int i = 0; i < 8; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        if (!chessboard[i][j].alive) {
+                            DeadPieces.add(chessboard[i][j]);
+                        }
+                    }
+                }
+                DeadPiecesVisible();
+                ClickPieces.PlayerTurnLabelHide = false;
+            } else {
                 JOptionPane.showMessageDialog(null, "无法进一步回退",
                         "非法操作", JOptionPane.ERROR_MESSAGE);
             }
-            getPlayerTurnLabel();
-            DeadPiece = null;
-            DeadPieces = new ArrayList<>();
-            for (int i = 0; i < 8; i++) {
-                for (int j = 0; j < 4; j++) {
-                    if (!chessboard[i][j].alive) {
-                        DeadPieces.add(chessboard[i][j]);
-                    }
-                }
-            }
-            DeadPiecesVisible();
-            ClickPieces.PlayerTurnLabelHide = false;}
-            else{JOptionPane.showMessageDialog(null, "无法进一步回退",
-                    "非法操作", JOptionPane.ERROR_MESSAGE);}
         });
         add(undo);
     }
