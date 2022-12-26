@@ -4,17 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ac7a0c99-30f7-419a-995b-3e880210fd28" name="Changes" comment="00">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/music/音效.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/music/音效2.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/jlayer-1.0.1.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/音效.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/音效2.wav" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="ac7a0c99-30f7-419a-995b-3e880210fd28" name="Changes" comment="Changes">
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Calculate/Coordinate.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Calculate/Points.class" beforeDir="false" />
@@ -77,10 +68,8 @@
       <change beforePath="$PROJECT_DIR$/out/production/Work/view/Chessboard.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Work/view/Music.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Work/中国象棋.wav" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Pieces/AdvisorChess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/AdvisorChess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChessGameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChessGameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Music.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Chessboard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -128,16 +117,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "D:/java projects/Java_Project/WorkDarkChess/src"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/java projects/Java_Project/WorkDarkChess/src&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\java projects\Java_Project\WorkDarkChess\src" />

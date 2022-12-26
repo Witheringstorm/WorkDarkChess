@@ -81,6 +81,7 @@ public class ChessGameFrame extends JFrame {
         addCheatButton();
 //        Save.writeRecord();
         addUndoButton();
+        addMuteButton();
 
     }
 
@@ -98,6 +99,32 @@ public class ChessGameFrame extends JFrame {
             }
         });
     }*/
+
+    //静音按钮
+    public void addMuteButton(){
+        AtomicInteger c = new AtomicInteger();
+        JButton mute = new JButton("Mute");
+        mute.setLocation(600, 0);
+        mute.setSize(100, 50);
+        mute.setVisible(true);
+        mute.addActionListener(e -> {
+            c.getAndIncrement();
+            if (c.get() % 2 == 1) {
+                cheat = true;
+                mute.setText("Unmute");
+            } else {
+                cheat = false;
+                for (int i = 0; i < 8; i++) {
+                    for (int j = 0; j < 4; j++) {
+                        chessboard[i][j].visible();
+                    }
+                }
+                mute.setText("Mute");
+            }
+        });
+        add(mute);
+    }
+
 
     //重新开始按钮
     public void addRestartButton() {
@@ -161,8 +188,8 @@ public class ChessGameFrame extends JFrame {
                 label.addMouseListener(new MouseAdapter() {
                     public void mousePressed(MouseEvent e) {
                         // 这里是点击 JLabel 后要执行的代码
-                        File 音效2=new File("音效2.wav");
-                        Music.playMusic(音效2);
+                        File music2=new File("音效2.wav");
+                        Music.playMusic(music2);
                         clickTimes++;
                         canSave2 = true;
                         Save.record.add(String.format("%d %d&", ClickedPiece.x, ClickedPiece.y));
