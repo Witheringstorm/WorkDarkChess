@@ -3,9 +3,14 @@ package EventDealer;
 import Pieces.*;
 import view.ChessGameFrame;
 
+import static Pieces.Information_of_Location.chessboard;
+
+
 public class ClickPieces {
-    static Piece interact_click;
+    public static Piece interact_click;
+
     public static boolean theVeryFirstClick = true;
+
 
     public static boolean PlayerTurnLabelHide = false;
     public static void click(Piece a) {

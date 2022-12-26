@@ -1,13 +1,16 @@
 package Pieces;
 
-import java.io.Serializable;
+
 import java.util.ArrayList;
 
-public class Information_of_Location implements Serializable {
+public class Information_of_Location  {
     /*
     用二维数组存储棋子类型和位置信息
      */
     public static Piece[][] chessboard ;
+    public static Piece[][] chessboardCopy = new Piece[8][4];
+
+
     public static ArrayList<Piece> arr;
 
 

@@ -1,3 +1,4 @@
+import SaveAndLoad.Save;
 import view.ChessGameFrame;
 import Pieces.*;
 
@@ -9,6 +10,7 @@ public class Main {
             Information_of_Location.initialize();
             ChessGameFrame g = new ChessGameFrame();
             g.setVisible(true);
+            Save.writeRecord();
         });
     }
 }

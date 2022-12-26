@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class Player {
     public static int click_times = 0;
+    public static int preclick_times = 0;
     public static char playerTurn = 'r';
 
     public static boolean isFirstClick() {

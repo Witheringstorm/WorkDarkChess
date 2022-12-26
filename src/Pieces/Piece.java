@@ -21,7 +21,6 @@ public abstract class Piece extends JComponent {
     public ImageIcon b;
 
 
-
     public void reverse() {
         IsReversal = true;
     }
@@ -37,16 +36,24 @@ public abstract class Piece extends JComponent {
 
     public abstract JLabel visible();
 
-    public String toString(){
-        return(String.format("%d %c %b %d %d %b",type,side,alive,x,y,IsReversal));
+    public String toString() {
+        return (String.format("%d %c %b %d %d %b", type, side, alive, x, y, IsReversal));
+    }
+
+    public JLabel visible(boolean cheat) {
+        if (this.side == 'r' && IsSelected == false) {
+            PieceLabel.setIcon(r);
+        }
+        if (this.side == 'b' && IsSelected == false) {
+            PieceLabel.setIcon(b);
+        }
+        return PieceLabel;
     }
 
 
-    public void capture(int i,int j){
+    public void capture(int i, int j) {
 
     }
-
-
 
 
 }
