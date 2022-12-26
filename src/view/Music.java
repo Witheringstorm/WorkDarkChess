@@ -72,7 +72,7 @@ import javax.sound.sampled.FloatControl;
 import java.io.File;
 
 public class Music{
-static Clip clip;
+public static Clip clip;
 public static void playMusic(File musicPath){
         try
         {

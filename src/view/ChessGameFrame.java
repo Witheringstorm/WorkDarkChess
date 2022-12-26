@@ -22,6 +22,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static EventDealer.Interact.DeadPiece;
 import static EventDealer.Interact.DeadPieces;
 import static Pieces.Information_of_Location.chessboard;
+import static view.Music.clip;
 
 
 public class ChessGameFrame extends JFrame {
@@ -110,16 +111,12 @@ public class ChessGameFrame extends JFrame {
         mute.addActionListener(e -> {
             c.getAndIncrement();
             if (c.get() % 2 == 1) {
-                cheat = true;
                 mute.setText("Unmute");
-            } else {
-                cheat = false;
-                for (int i = 0; i < 8; i++) {
-                    for (int j = 0; j < 4; j++) {
-                        chessboard[i][j].visible();
-                    }
-                }
+                clip.stop();
+            }
+            else {
                 mute.setText("Mute");
+                clip.start();
             }
         });
         add(mute);
