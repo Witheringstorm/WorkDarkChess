@@ -5,20 +5,107 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac7a0c99-30f7-419a-995b-3e880210fd28" name="Changes" comment="00">
-      <change afterPath="$PROJECT_DIR$/src/view/Music.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/中国象棋.wav" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/中国象棋.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/音效.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/音效2.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/jlayer-1.0.1.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/音效.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/音效2.wav" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Work/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Work/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Calculate/Coordinate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Calculate/Points.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/EventDealer/ClickPieces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/EventDealer/Interact.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/EventDealer/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Pieces/AdvisorChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Pieces/CannonChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Pieces/ChariotChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Pieces/GeneralChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Pieces/HorseChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Pieces/Information_of_Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Pieces/MinisterChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Pieces/Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/Pieces/SoldierChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/SaveAndLoad/Save.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/view/ChessGameFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/view/ChessGameFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Java_Project/view/Chessboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Calculate/Coordinate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Calculate/Points.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/EventDealer/ClickPieces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/EventDealer/Interact.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/EventDealer/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Pieces/AdvisorChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Pieces/CannonChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Pieces/ChariotChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Pieces/GeneralChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Pieces/HorseChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Pieces/Information_of_Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Pieces/MinisterChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Pieces/Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/Pieces/SoldierChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/SaveAndLoad/Save.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/SaveAndLoad/Undo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/view/ChessGameFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/view/ChessGameFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Project备份/view/Chessboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Calculate/Coordinate.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Calculate/Points.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/EventDealer/ClickPieces.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/EventDealer/Interact.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/EventDealer/Player.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Pieces/AdvisorChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Pieces/CannonChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Pieces/ChariotChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Pieces/GeneralChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Pieces/HorseChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Pieces/Information_of_Location.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Pieces/MinisterChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Pieces/Piece.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/Pieces/SoldierChess.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/SaveAndLoad/Save.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/SaveAndLoad/Undo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame$1.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/view/Chessboard.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/view/Music.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/中国象棋.wav" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Pieces/AdvisorChess.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Pieces/AdvisorChess.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChessGameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChessGameFrame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/view/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Music.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/music">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -46,14 +133,20 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "last_opened_file_path": "D:/java projects/Java_Project/WorkDarkChess/file"
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/java projects/Java_Project/WorkDarkChess/src"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\java projects\Java_Project\WorkDarkChess\src" />
+      <recent name="D:\java projects\Java_Project\WorkDarkChess\music" />
       <recent name="D:\java projects\Java_Project\WorkDarkChess\file" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\java projects\Java_Project\WorkDarkChess\music" />
+      <recent name="D:\java projects\Java_Project\WorkDarkChess\src" />
       <recent name="D:\java projects\Java_Project\WorkDarkChess\src\view" />
     </key>
   </component>

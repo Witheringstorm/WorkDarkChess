@@ -1,9 +1,6 @@
 package view;
 
 
-import EventDealer.Interact;
-import Pieces.Piece;
-
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -23,6 +20,8 @@ public class Chessboard extends JPanel {
     BufferedImage advisor;
 
     public Chessboard() {
+        File 中国象棋=new File("中国象棋.wav");
+        Music.playMusic(中国象棋);
         try {
             Wooden_Chessboard = ImageIO.read(new File("image/WoodenChessboard.jpg"));
             test = ImageIO.read(new File("image/test.jpg"));

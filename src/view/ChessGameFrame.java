@@ -3,10 +3,11 @@ package view;
 游戏主窗体。
  */
 
-import Calculate.*;
+import Calculate.Points;
 import EventDealer.ClickPieces;
 import EventDealer.Player;
-import Pieces.*;
+import Pieces.Information_of_Location;
+import Pieces.Piece;
 import SaveAndLoad.Save;
 import SaveAndLoad.Undo;
 
@@ -14,12 +15,13 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static EventDealer.Interact.DeadPiece;
 import static EventDealer.Interact.DeadPieces;
-import static Pieces.Information_of_Location.*;
+import static Pieces.Information_of_Location.chessboard;
 
 
 public class ChessGameFrame extends JFrame {
@@ -79,7 +81,7 @@ public class ChessGameFrame extends JFrame {
         addCheatButton();
 //        Save.writeRecord();
         addUndoButton();
-        //playMusic();
+
     }
 
 
@@ -159,6 +161,8 @@ public class ChessGameFrame extends JFrame {
                 label.addMouseListener(new MouseAdapter() {
                     public void mousePressed(MouseEvent e) {
                         // 这里是点击 JLabel 后要执行的代码
+                        File 音效2=new File("音效2.wav");
+                        Music.playMusic(音效2);
                         clickTimes++;
                         canSave2 = true;
                         Save.record.add(String.format("%d %d&", ClickedPiece.x, ClickedPiece.y));
@@ -418,6 +422,8 @@ public class ChessGameFrame extends JFrame {
         });
         add(Cheat);
     }
+
+
 
     //悔棋按钮
     public void addUndoButton() {
