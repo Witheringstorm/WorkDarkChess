@@ -80,9 +80,9 @@ public class Save {
             int len = fr.read(ch);
             return new String(ch, 0, len);
         } catch (IOException e) {
-            e.printStackTrace();
             JOptionPane.showMessageDialog(null, "你输入的存档不存在",
                     "找不到存档", JOptionPane.ERROR_MESSAGE);
+            Save.loadGame("default/d.txt");
         }
         return null;
     }
@@ -307,6 +307,7 @@ public class Save {
         SwingUtilities.invokeLater(() -> {
             ChessGameFrame g = new ChessGameFrame();
             g.setVisible(true);
+            g.canSave2 = true;
         });
     }
 }
