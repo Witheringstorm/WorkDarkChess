@@ -168,8 +168,8 @@ public class Save {
                         throw new RuntimeException(e);
                     }
                 }
-            }
-            Points.calculatePoints();
+            }Points.calculatePoints();
+
             record = new ArrayList<>();
             record2 = new ArrayList<>();
             writeRecord();

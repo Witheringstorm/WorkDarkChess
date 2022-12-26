@@ -1,5 +1,6 @@
 package EventDealer;
 
+import Calculate.Points;
 import Pieces.*;
 import view.ChessGameFrame;
 
