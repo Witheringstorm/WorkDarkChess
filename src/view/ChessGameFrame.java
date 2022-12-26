@@ -173,8 +173,6 @@ public class ChessGameFrame extends JFrame {
                             WinnerVisible();
                             DeadPiecesVisible();
                         }
-
-
                     }
 
                     public void mouseEntered(MouseEvent e) {
@@ -280,7 +278,8 @@ public class ChessGameFrame extends JFrame {
         save.setSize(100, 50);
         save.setVisible(true);
         save.addActionListener(e -> {
-            if (canSave && canSave2) {
+            if (/*canSave && */canSave2) {
+                Save.record2 = new ArrayList<>();
                 Save.writeRecord2();
                 Save.record2.add(String.valueOf(Player.whichPlayer()));
                 String path = JOptionPane.showInputDialog
@@ -296,7 +295,7 @@ public class ChessGameFrame extends JFrame {
                     }
                 }
             } else {
-                JOptionPane.showMessageDialog(null, "游戏未开始或已存档\n (悔棋后至少下一步棋后才能存档)"
+                JOptionPane.showMessageDialog(null, "游戏未开始时不能存档"
                         , "非法操作", JOptionPane.WARNING_MESSAGE);
             }
         });
@@ -323,6 +322,7 @@ public class ChessGameFrame extends JFrame {
                         status = Save.loadGame("file/" + path);
                     } catch (ArrayIndexOutOfBoundsException a) {
                         status = 102;
+
                     }
                     int[] count = new int[7];
                     for (int x = 0; x < 8; x++) {
@@ -337,6 +337,7 @@ public class ChessGameFrame extends JFrame {
                     if (status == 102) {
                         JOptionPane.showMessageDialog(null, "存档中棋盘错误",
                                 "错误代码：102", JOptionPane.ERROR_MESSAGE);
+                        Save.loadGame("default/d.txt");
                     } else if (status == 103) {
                         JOptionPane.showMessageDialog(null, "存档中棋子数目或类型错误",
                                 "错误代码：103", JOptionPane.ERROR_MESSAGE);
@@ -352,6 +353,7 @@ public class ChessGameFrame extends JFrame {
                     DeadPiece = null;
                     DeadPieces = new ArrayList<>();
                     clickTimes = 0;
+
                     for (int i = 0; i < 8; i++) {
                         for (int j = 0; j < 4; j++) {
                             if (!chessboard[i][j].alive) {
