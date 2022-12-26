@@ -429,6 +429,10 @@ public class ChessGameFrame extends JFrame {
                 try {
                     Undo.undo(a.getAndIncrement());
                     dispose();
+                    SwingUtilities.invokeLater(() -> {
+                        ChessGameFrame g = new ChessGameFrame();
+                        g.setVisible(true);
+                    });
                 } catch (IndexOutOfBoundsException q) {
                     a.getAndDecrement();
                     JOptionPane.showMessageDialog(null, "无法进一步回退",
