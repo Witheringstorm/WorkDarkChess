@@ -15,7 +15,6 @@ import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
-import java.util.concurrent.atomic.AtomicBoolean;
 import java.util.concurrent.atomic.AtomicInteger;
 
 import static EventDealer.Interact.DeadPiece;
@@ -179,6 +178,9 @@ public class ChessGameFrame extends JFrame {
                         if (cheat && ClickedPiece.alive) {
                             ClickedPiece.visible(true);
                         }
+                        Points.calculatePoints();
+                        PointsVisible();
+                        DeadPiecesVisible();
                     }
 
                     public void mouseExited(MouseEvent e) {
@@ -203,7 +205,7 @@ public class ChessGameFrame extends JFrame {
         }
         PlayerTurnLabel.setSize(200, 50);
         PlayerTurnLabel.setFont(new Font("Rockwell", Font.BOLD, 30));
-        PlayerTurnLabel.setLocation(450, 500);
+        PlayerTurnLabel.setLocation(450, 450);
         PlayerTurnLabel.setForeground(Color.WHITE);
         add(PlayerTurnLabel);
     }
@@ -216,13 +218,22 @@ public class ChessGameFrame extends JFrame {
             Piece deadPiece = DeadPieces.get(i);
             if (deadPiece != null && deadPiece.side == 'r') {
                 DeadPiecesLabel[count1 + count2].setIcon(deadPiece.r);
-                DeadPiecesLabel[count1 + count2].setLocation(0, 60 * count1);
+                if (60 * count2 < 660) {
+                    DeadPiecesLabel[count1 + count2].setLocation(0, 60 * count1);
+                } else {
+                    DeadPiecesLabel[count1 + count2].setLocation(60, 60 * (count1 - 11));
+                }
                 DeadPiecesLabel[count1 + count2].setSize(60, 60);
                 count1++;
                 System.out.println("Dead!!!");
             } else if (deadPiece != null && deadPiece.side == 'b') {
                 DeadPiecesLabel[count1 + count2].setIcon(deadPiece.b);
-                DeadPiecesLabel[count1 + count2].setLocation(645, 60 * count2);
+                if (60 * count2 < 660) {
+                    DeadPiecesLabel[count1 + count2].setLocation(645, 60 * count2);
+                } else {
+                    DeadPiecesLabel[count1 + count2].setLocation(585, 60 * (count2 - 11));
+                }
+
                 DeadPiecesLabel[count1 + count2].setSize(60, 60);
                 count2++;
                 System.out.println("Dead!!!");
@@ -309,7 +320,7 @@ public class ChessGameFrame extends JFrame {
         load.setSize(100, 50);
         load.setVisible(true);
         load.addActionListener(e -> {
-            int status = 0;
+            AtomicInteger status = new AtomicInteger();
             String path = JOptionPane.showInputDialog
                     (null, "请输入你要读入存档的名称", "default.txt");
             if (path != null) {
@@ -318,55 +329,65 @@ public class ChessGameFrame extends JFrame {
                             "错误编码：101", JOptionPane.ERROR_MESSAGE);
                 } else {
                     dispose();
-                    try {
-                        status = Save.loadGame("file/" + path);
-                    } catch (ArrayIndexOutOfBoundsException a) {
-                        status = 102;
-
-                    }
-                    int[] count = new int[7];
-                    for (int x = 0; x < 8; x++) {
-                        for (int y = 0; y < 4; y++) {
-                            count[chessboard[x][y].type]++;
+                    new Thread(() -> {
+                        try {
+                            status.set(Save.loadGame("file/" + path));
+                        } catch (ArrayIndexOutOfBoundsException a) {
+                            status.set(102);
                         }
-                    }
-                    if (count[0] != 4 || count[1] != 10 || count[2] != 4 || count[3] != 4 ||
-                            count[4] != 4 || count[5] != 4 || count[6] != 2) {
-                        status = 103;
-                    }
-                    if (status == 102) {
-                        JOptionPane.showMessageDialog(null, "存档中棋盘错误",
-                                "错误代码：102", JOptionPane.ERROR_MESSAGE);
-                        Save.loadGame("default/d.txt");
-                    } else if (status == 103) {
-                        JOptionPane.showMessageDialog(null, "存档中棋子数目或类型错误",
-                                "错误代码：103", JOptionPane.ERROR_MESSAGE);
-                    } else if (status == 104) {
-                        JOptionPane.showMessageDialog(null, "存档中缺少行棋方",
-                                "错误代码：104", JOptionPane.ERROR_MESSAGE);
-                    } else if (status == 105) {
-                        JOptionPane.showMessageDialog(null, "存档中行棋步骤错误",
-                                "错误代码：105", JOptionPane.ERROR_MESSAGE);
-                    }
-
-                    getPlayerTurnLabel();
-                    DeadPiece = null;
-                    DeadPieces = new ArrayList<>();
-                    clickTimes = 0;
-
-                    for (int i = 0; i < 8; i++) {
-                        for (int j = 0; j < 4; j++) {
-                            if (!chessboard[i][j].alive) {
-                                DeadPieces.add(chessboard[i][j]);
+                        int[] count = new int[7];
+                        for (int x = 0; x < 8; x++) {
+                            for (int y = 0; y < 4; y++) {
+                                count[chessboard[x][y].type]++;
                             }
                         }
-                    }
-                    DeadPiecesVisible();
-                    ClickPieces.PlayerTurnLabelHide = false;
+                        if (count[0] != 4 || count[1] != 10 || count[2] != 4 || count[3] != 4 ||
+                                count[4] != 4 || count[5] != 4 || count[6] != 2) {
+                            status.set(103);
+                        }
+                        if (status.get() == 102) {
+                            JOptionPane.showMessageDialog(null, "存档中棋盘错误",
+                                    "错误代码：102", JOptionPane.ERROR_MESSAGE);
+                            Save.loadGame("default/d.txt");
+                        } else if (status.get() == 103) {
+                            JOptionPane.showMessageDialog(null, "存档中棋子数目或类型错误",
+                                    "错误代码：103", JOptionPane.ERROR_MESSAGE);
+                        } else if (status.get() == 104) {
+                            JOptionPane.showMessageDialog(null, "存档中缺少行棋方",
+                                    "错误代码：104", JOptionPane.ERROR_MESSAGE);
+                        } else if (status.get() == 105) {
+                            JOptionPane.showMessageDialog(null, "存档中行棋步骤错误",
+                                    "错误代码：105", JOptionPane.ERROR_MESSAGE);
+                        }
+
+                        getPlayerTurnLabel();
+                        DeadPiece = null;
+                        DeadPieces = new ArrayList<>();
+                        clickTimes = 0;
+
+                        for (int i = 0; i < 8; i++) {
+                            for (int j = 0; j < 4; j++) {
+                                if (!chessboard[i][j].alive) {
+                                    DeadPieces.add(chessboard[i][j]);
+                                }
+                            }
+                        }
+                        DeadPiecesVisible();
+                        ClickPieces.PlayerTurnLabelHide = false;
+                    }).start();
+                    SwingUtilities.invokeLater(() -> {
+                        ChessGameFrame g = new ChessGameFrame();
+                        g.setVisible(true);
+                    });
+
                 }
             }
 
+            Winner = "";
+            GameOver = false;
+            WinnerVisible();
             canSave = false;
+
         });
         add(load);
     }
@@ -399,7 +420,7 @@ public class ChessGameFrame extends JFrame {
     //悔棋按钮
     public void addUndoButton() {
         JButton undo = new JButton("Undo");
-        undo.setLocation(500, 400);
+        undo.setLocation(500, 500);
         undo.setSize(100, 50);
         undo.setVisible(true);
         AtomicInteger a = new AtomicInteger(1);
@@ -432,7 +453,10 @@ public class ChessGameFrame extends JFrame {
         });
         add(undo);
     }
+
 }
+
+
 
 
 
