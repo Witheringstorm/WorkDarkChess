@@ -21,6 +21,7 @@ import static EventDealer.Interact.DeadPiece;
 import static EventDealer.Interact.DeadPieces;
 import static Pieces.Information_of_Location.*;
 
+
 public class ChessGameFrame extends JFrame {
     private final int GameFrameWidth = 720;
 
@@ -78,6 +79,7 @@ public class ChessGameFrame extends JFrame {
         addCheatButton();
 //        Save.writeRecord();
         addUndoButton();
+        //playMusic();
     }
 
 
