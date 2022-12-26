@@ -2,14 +2,11 @@ package view;
 
 
 import javax.imageio.ImageIO;
-import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
-
-import static view.Music.clip;
 /*
 绘制棋盘
  */
@@ -23,9 +20,9 @@ public class Chessboard extends JPanel {
     BufferedImage advisor;
 
     public Chessboard() {
-        File 中国象棋=new File("中国象棋.wav");
-        Music.playMusic(中国象棋);
-        clip.loop(Clip.LOOP_CONTINUOUSLY);
+//        File 中国象棋=new File("中国象棋.wav");
+//        Music.playMusic(中国象棋);
+//        clip.loop(Clip.LOOP_CONTINUOUSLY);
         try {
             Wooden_Chessboard = ImageIO.read(new File("image/WoodenChessboard.jpg"));
             test = ImageIO.read(new File("image/test.jpg"));

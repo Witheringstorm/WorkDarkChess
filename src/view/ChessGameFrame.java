@@ -11,6 +11,7 @@ import Pieces.Piece;
 import SaveAndLoad.Save;
 import SaveAndLoad.Undo;
 
+import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -22,7 +23,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static EventDealer.Interact.DeadPiece;
 import static EventDealer.Interact.DeadPieces;
 import static Pieces.Information_of_Location.chessboard;
-import static view.Music.clip;
+import static view.Music.bg_clip;
+
+
+//import static view.Music.clip;
 
 
 public class ChessGameFrame extends JFrame {
@@ -54,6 +58,10 @@ public class ChessGameFrame extends JFrame {
     public static int clickTimes = 0;
     public boolean cheat = false;
 
+//    public static  Clip bg_clip;
+//    public static  Clip music1_clip;
+//    public static  Clip music2_clip;
+
     public ChessGameFrame() {
         setTitle("Dark Chess");
         setSize(GameFrameWidth, GameFrameHeight);
@@ -83,6 +91,9 @@ public class ChessGameFrame extends JFrame {
 //        Save.writeRecord();
         addUndoButton();
         addMuteButton();
+        File 中国象棋=new File("中国象棋.wav");
+        Music.playMusic1(中国象棋);
+        bg_clip.loop(Clip.LOOP_CONTINUOUSLY);
 
     }
 
@@ -105,18 +116,20 @@ public class ChessGameFrame extends JFrame {
     public void addMuteButton(){
         AtomicInteger c = new AtomicInteger();
         JButton mute = new JButton("Mute");
-        mute.setLocation(600, 0);
-        mute.setSize(100, 50);
+        mute.setLocation(450, 50);
+        mute.setSize(100, 30);
         mute.setVisible(true);
         mute.addActionListener(e -> {
             c.getAndIncrement();
             if (c.get() % 2 == 1) {
                 mute.setText("Unmute");
-                clip.stop();
+                bg_clip.stop();
+                System.out.println("Mute!");
             }
             else {
                 mute.setText("Mute");
-                clip.start();
+                bg_clip.start();
+                System.out.println("Unmute!");
             }
         });
         add(mute);
@@ -186,7 +199,7 @@ public class ChessGameFrame extends JFrame {
                     public void mousePressed(MouseEvent e) {
                         // 这里是点击 JLabel 后要执行的代码
                         File music2=new File("音效2.wav");
-                        Music.playMusic(music2);
+                        Music.playMusic2(music2);
                         clickTimes++;
                         canSave2 = true;
                         Save.record.add(String.format("%d %d&", ClickedPiece.x, ClickedPiece.y));

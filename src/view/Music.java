@@ -72,28 +72,46 @@ import javax.sound.sampled.FloatControl;
 import java.io.File;
 
 public class Music{
-public static Clip clip;
-public static void playMusic(File musicPath){
-        try
-        {
-        //File musicPath=new File("");
-        if(musicPath.exists())
-        {
-        AudioInputStream audioInput= AudioSystem.getAudioInputStream(musicPath);
-        clip=AudioSystem.getClip();
-        clip.open(audioInput);
-        FloatControl gainControl=(FloatControl)clip.getControl(FloatControl.Type.MASTER_GAIN);
-        gainControl.setValue(-20.0f);//设置音量，范围为 -60.0f 到 6.0f
-        clip.start();
-        //clip.loop(Clip.LOOP_CONTINUOUSLY);
-        }
-        else
-        {
-        }
-        }
-        catch(Exception ex)
-        {
-        ex.printStackTrace();
-        }
-        }
-        }
+        public static  Clip bg_clip;
+        public static  Clip music1_clip;
+        public static  Clip music2_clip;
+
+        public static void playMusic1(File musicPath){
+                try {
+                //File musicPath=new File("");
+                if(musicPath.exists()) {
+                AudioInputStream audioInput= AudioSystem.getAudioInputStream(musicPath);
+                         bg_clip = AudioSystem.getClip();
+                bg_clip.open(audioInput);
+                FloatControl gainControl=(FloatControl) bg_clip.getControl(FloatControl.Type.MASTER_GAIN);
+                gainControl.setValue(-20.0f);//设置音量，范围为 -60.0f 到 6.0f
+                bg_clip.start();
+                //clip.loop(Clip.LOOP_CONTINUOUSLY);
+                }
+                else {}
+                }
+                catch(Exception ex)
+                {
+                ex.printStackTrace();
+                }}
+
+        public static void playMusic2(File musicPath){
+                try {
+                        //File musicPath=new File("");
+                        if(musicPath.exists()) {
+                                AudioInputStream audioInput= AudioSystem.getAudioInputStream(musicPath);
+                                music2_clip = AudioSystem.getClip();
+                                music2_clip.open(audioInput);
+                                FloatControl gainControl=(FloatControl) music2_clip.getControl(FloatControl.Type.MASTER_GAIN);
+                                gainControl.setValue(-20.0f);//设置音量，范围为 -60.0f 到 6.0f
+                                music2_clip.start();
+                                //clip.loop(Clip.LOOP_CONTINUOUSLY);
+                        }
+                        else {}
+                }
+                catch(Exception ex)
+                {
+                        ex.printStackTrace();
+                }}
+
+}
