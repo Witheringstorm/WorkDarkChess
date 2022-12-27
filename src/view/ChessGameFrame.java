@@ -145,7 +145,7 @@ public class ChessGameFrame extends JFrame {
         restart.addActionListener(e -> {
             Information_of_Location.restart();
             System.out.println("Restart");
-            bg_clip.stop();//调用表示特殊数据线的接口暂停音乐
+            bg_clip.stop();
 
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < 4; j++) {
@@ -471,6 +471,7 @@ public class ChessGameFrame extends JFrame {
         undo.setVisible(true);
         AtomicInteger a = new AtomicInteger(1);
         undo.addActionListener(e -> {
+            bg_clip.stop();
             if (clickTimes >= 2) {
                 try {
                     Undo.undo(a.getAndIncrement());
