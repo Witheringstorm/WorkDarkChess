@@ -198,8 +198,7 @@ public class ChessGameFrame extends JFrame {
                 label.addMouseListener(new MouseAdapter() {
                     public void mousePressed(MouseEvent e) {
                         // 这里是点击 JLabel 后要执行的代码
-                        File music2=new File("music/翻棋音效.wav");
-                        Music.playMusic2(music2);
+
                         clickTimes++;
                         canSave2 = true;
                         Save.record.add(String.format("%d %d&", ClickedPiece.x, ClickedPiece.y));

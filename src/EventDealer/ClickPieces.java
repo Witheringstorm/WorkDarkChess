@@ -1,10 +1,9 @@
 package EventDealer;
 
-import Calculate.Points;
-import Pieces.*;
-import view.ChessGameFrame;
+import Pieces.Piece;
+import view.Music;
 
-import static Pieces.Information_of_Location.chessboard;
+import java.io.File;
 
 
 public class ClickPieces {
@@ -34,6 +33,8 @@ public class ClickPieces {
             System.out.println("reverse!!!");
             a.visible();
             Player.click_times += 2;
+            File music2=new File("music/翻棋音效.wav");
+            Music.playMusic2(music2);
         }// TODO: 2022/12/18 完善条件
 
         //选中点击的棋子
