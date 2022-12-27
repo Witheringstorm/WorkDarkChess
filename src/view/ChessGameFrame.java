@@ -145,6 +145,8 @@ public class ChessGameFrame extends JFrame {
         restart.addActionListener(e -> {
             Information_of_Location.restart();
             System.out.println("Restart");
+            bg_clip.stop();//调用表示特殊数据线的接口暂停音乐
+
             for (int i = 0; i < 8; i++) {
                 for (int j = 0; j < 4; j++) {
                     chessboard[i][j].x = j;

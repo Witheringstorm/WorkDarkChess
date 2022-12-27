@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac7a0c99-30f7-419a-995b-3e880210fd28" name="Changes" comment="Changes">
-      <change beforePath="$PROJECT_DIR$/src/EventDealer/ClickPieces.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventDealer/ClickPieces.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChessGameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChessGameFrame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
