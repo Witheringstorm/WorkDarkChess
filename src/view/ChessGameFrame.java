@@ -11,7 +11,6 @@ import Pieces.Piece;
 import SaveAndLoad.Save;
 import SaveAndLoad.Undo;
 
-import javax.sound.sampled.Clip;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -93,7 +92,7 @@ public class ChessGameFrame extends JFrame {
         addMuteButton();
         File 中国象棋=new File("中国象棋.wav");
         Music.playMusic1(中国象棋);
-        bg_clip.loop(Clip.LOOP_CONTINUOUSLY);
+//        bg_clip.loop(Clip.LOOP_CONTINUOUSLY);
 
     }
 
@@ -364,6 +363,7 @@ public class ChessGameFrame extends JFrame {
         load.setSize(100, 50);
         load.setVisible(true);
         load.addActionListener(e -> {
+            bg_clip.stop();
             AtomicInteger status = new AtomicInteger();
             String path = JOptionPane.showInputDialog
                     (null, "请输入你要读入存档的名称", "default.txt");
