@@ -5,13 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="ac7a0c99-30f7-419a-995b-3e880210fd28" name="Changes" comment="Changes">
+      <change afterPath="$PROJECT_DIR$/music/吃子音效.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/翻棋音效.wav" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/music/获胜音效.wav" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/Work/EventDealer/Interact.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Work/EventDealer/Interact.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Work/view/ChessGameFrame.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/Work/view/Chessboard.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Work/view/Chessboard.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/Work/view/Music.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/Work/view/Music.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Calculate/Points.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Calculate/Points.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/EventDealer/Interact.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/EventDealer/Interact.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/ChessGameFrame.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/ChessGameFrame.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/view/Chessboard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Chessboard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/view/Music.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/view/Music.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,20 +63,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/java projects/Java_Project/WorkDarkChess/src&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "D:/java projects/Java_Project/WorkDarkChess/music"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\java projects\Java_Project\WorkDarkChess\src" />
       <recent name="D:\java projects\Java_Project\WorkDarkChess\music" />
+      <recent name="D:\java projects\Java_Project\WorkDarkChess\src" />
       <recent name="D:\java projects\Java_Project\WorkDarkChess\file" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -132,6 +135,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="00" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/WorkDarkChess$Main.ic" NAME="Main 覆盖结果" MODIFIED="1672084525702" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
+    <SUITE FILE_PATH="coverage/WorkDarkChess$Main.ic" NAME="Main 覆盖结果" MODIFIED="1672085441397" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" />
   </component>
 </project>

@@ -1,9 +1,10 @@
 package EventDealer;
 
-import Pieces.*;
-import view.ChessGameFrame;
-import view.Chessboard;
+import Pieces.Information_of_Location;
+import Pieces.Piece;
+import view.Music;
 
+import java.io.File;
 import java.util.ArrayList;
 
 import static Pieces.Information_of_Location.chessboard;
@@ -16,6 +17,7 @@ public class Interact {
     public static Piece DeadPiece = null;
 
     public static void interact(Piece a, Piece b) {
+
         //如果是空格，则除 炮 以外都可与之交换位置
         if (!b.alive) {
             if ((abs(a.x - b.x) + abs(a.y - b.y) == 1) && a.type != 0) {
@@ -58,6 +60,8 @@ public class Interact {
     }
 
     public static void capture(Piece a, Piece b) {
+        File 吃子音效=new File("吃子音效.wav");
+        Music.playMusic3(吃子音效);
         //棋子a吃棋子b
         if(b.alive){
             DeadPiece = b;

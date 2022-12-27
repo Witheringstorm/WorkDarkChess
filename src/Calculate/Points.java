@@ -1,12 +1,11 @@
 package Calculate;
 
-import Pieces.*;
-import view.*;
+import view.Music;
+
+import java.io.File;
+
 import static Pieces.Information_of_Location.chessboard;
-import static view.ChessGameFrame.PointsOfBlack;
-import static view.ChessGameFrame.PointsOfRed;
-import static view.ChessGameFrame.GameOver;
-import static view.ChessGameFrame.Winner;
+import static view.ChessGameFrame.*;
 
 public class Points {
     public static void calculatePoints() {
@@ -27,10 +26,14 @@ public class Points {
         if(PointsOfRed >= 60) {
             GameOver = true;
             Winner = "Red";
+            File 获胜音效=new File("获胜音效.wav");
+            Music.playMusic4(获胜音效);
         }
         if(PointsOfBlack >= 60){
             GameOver = true;
             Winner = "Black";
+            File 获胜音效=new File("获胜音效.wav");
+            Music.playMusic4(获胜音效);
         }
     }
 }
